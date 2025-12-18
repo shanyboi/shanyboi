@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Based Bodyworks - Static Clone</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
-    body { background:#fff; color:#222; line-height:1.6; }
+    /* Reset & Basics */
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family: 'Roboto', sans-serif; background:#fff; color:#222; line-height:1.6; }
 
     /* Header */
     header {
@@ -15,43 +20,75 @@
       padding:20px 0;
       position: sticky;
       top:0;
-      z-index: 1000;
+      z-index:1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     nav { display:flex; justify-content:center; gap:30px; }
-    nav a { text-decoration:none; color:#222; font-weight:600; transition: color 0.3s; }
-    nav a:hover { color:#ff6600; }
+    nav a { text-decoration:none; color:#222; font-weight:600; transition: color 0.3s, transform 0.2s; font-size:1.1rem; }
+    nav a:hover { color:#ff6600; transform: scale(1.05); }
 
     /* Hero Section */
-    .hero { background:#f8f8f8; padding:100px 20px; text-align:center; }
-    .hero h1 { font-size:3rem; margin-bottom:10px; }
-    .hero p { font-size:1.2rem; margin-bottom:20px; }
-    .btn { display:inline-block; padding:12px 30px; background:#000; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; transition: background 0.3s; }
-    .btn:hover { background:#ff6600; }
+    .hero {
+      background: linear-gradient(to right, #fff4e6, #fff8f0);
+      padding:120px 20px;
+      text-align:center;
+    }
+    .hero h1 { font-family: 'Playfair Display', serif; font-size:3.5rem; color:#222; margin-bottom:15px; }
+    .hero p { font-size:1.3rem; margin-bottom:25px; color:#555; }
+    .btn { display:inline-block; padding:14px 35px; background: linear-gradient(45deg, #ff6600, #ff9a3c); color:#fff; text-decoration:none; font-weight:bold; border-radius:8px; transition: background 0.3s, transform 0.2s; }
+    .btn:hover { background: linear-gradient(45deg, #ff9a3c, #ff6600); transform: scale(1.05); }
 
     /* Sections */
-    .container { padding:50px 20px; max-width:1200px; margin:0 auto; }
-    h2 { text-align:center; margin-bottom:40px; font-size:2rem; }
+    .container { padding:60px 20px; max-width:1200px; margin:0 auto; }
+    h2 { text-align:center; margin-bottom:50px; font-size:2.5rem; font-family: 'Playfair Display', serif; color:#222; }
 
-    /* Products */
+    /* Product Cards */
     .products { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
-    .product-card { border:1px solid #ddd; width:220px; padding:15px; text-align:center; border-radius:5px; transition: transform 0.3s; background:#fff; }
-    .product-card img { width:100%; height:auto; margin-bottom:15px; border-radius:5px; }
-    .product-card:hover { transform: translateY(-5px); }
+    .product-card {
+      border-radius:15px;
+      overflow:hidden;
+      width:230px;
+      background:#fff;
+      box-shadow:0 10px 20px rgba(0,0,0,0.08);
+      text-align:center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card img { width:100%; height:auto; display:block; }
+    .product-card p { padding:10px 0; color:#333; font-weight:600; }
+    .product-card:hover { transform: translateY(-8px); box-shadow:0 15px 25px rgba(0,0,0,0.15); }
+
+    /* Category Cards */
+    .category-card a.btn { margin-top:10px; }
 
     /* Testimonials */
-    .testimonials { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
-    .testimonial-card { border:1px solid #ddd; padding:20px; width:250px; border-radius:5px; background:#f8f8f8; }
+    .testimonials { display:flex; flex-wrap:wrap; justify-content:center; gap:25px; }
+    .testimonial-card {
+      background:#fff8f0;
+      padding:25px;
+      border-radius:15px;
+      width:260px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .testimonial-card:hover { transform: translateY(-5px); }
+    .testimonial-card p { font-style:italic; color:#555; }
 
     /* Newsletter */
-    .newsletter input[type="email"] { padding:10px; width:250px; }
-    .newsletter button { padding:10px 20px; background:#000; color:#fff; border:none; border-radius:5px; margin-left:10px; cursor:pointer; }
-    .newsletter button:hover { background:#ff6600; }
+    .newsletter input[type="email"] {
+      padding:12px; width:280px; border-radius:8px; border:1px solid #ddd; font-size:1rem;
+    }
+    .newsletter button {
+      padding:12px 25px; background:#ff6600; color:#fff; border:none; border-radius:8px; cursor:pointer;
+      font-weight:bold; transition: background 0.3s, transform 0.2s;
+    }
+    .newsletter button:hover { background:#ff9a3c; transform: scale(1.05); }
 
     /* Footer */
-    footer { background:#222; color:#fff; text-align:center; padding:30px 20px; margin-top:40px; }
-    footer a { color:#ff6600; text-decoration:none; }
+    footer { background:#222; color:#fff; text-align:center; padding:35px 20px; margin-top:50px; }
+    footer a { color:#ff6600; text-decoration:none; font-weight:500; }
   </style>
 </head>
+
 <body>
 
 <!-- Header -->
@@ -67,7 +104,7 @@
 <!-- Hero Section -->
 <section class="hero">
   <h1>Based Bodyworks</h1>
-  <p>Natural, high-quality hair & body products for everyone</p>
+  <p>Natural, high-quality hair & body products crafted for everyone</p>
   <a href="#featured-products" class="btn">Shop Now</a>
 </section>
 
@@ -76,61 +113,54 @@
   <h2>Featured Products</h2>
   <div class="products">
     <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Texture Powder">
-      <p><strong>Texture Powder</strong></p>
-      <p>$20.00</p>
+      <img src="https://via.placeholder.com/230x230" alt="Texture Powder">
+      <p>Texture Powder</p>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Sea Salt Spray">
-      <p><strong>Sea Salt Spray</strong></p>
-      <p>$20.00</p>
+      <img src="https://via.placeholder.com/230x230" alt="Sea Salt Spray">
+      <p>Sea Salt Spray</p>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Shower Duo">
-      <p><strong>Shower Duo</strong></p>
-      <p>$56.00</p>
+      <img src="https://via.placeholder.com/230x230" alt="Shower Duo">
+      <p>Shower Duo</p>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Hair Oil">
-      <p><strong>Hair Oil</strong></p>
-      <p>$30.00</p>
-    </div>
-    <!-- Add more products to make page longer -->
-    <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Product 5">
-      <p><strong>Product 5</strong></p>
-      <p>$25.00</p>
+      <img src="https://via.placeholder.com/230x230" alt="Hair Oil">
+      <p>Hair Oil</p>
     </div>
     <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Product 6">
-      <p><strong>Product 6</strong></p>
-      <p>$30.00</p>
+      <img src="https://via.placeholder.com/230x230" alt="Product 5">
+      <p>Product 5</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/230x230" alt="Product 6">
+      <p>Product 6</p>
     </div>
   </div>
 </section>
 
-<!-- Category Highlights -->
-<section class="container" style="background:#f8f8f8;">
+<!-- Categories -->
+<section class="container" style="background:#fff4e6;">
   <h2>Shop By Category</h2>
   <div class="products">
-    <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Hair">
-      <p><strong>Hair</strong></p>
+    <div class="product-card category-card">
+      <img src="https://via.placeholder.com/230x230" alt="Hair">
+      <p>Hair</p>
       <a href="hair.html" class="btn">View</a>
     </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Body">
-      <p><strong>Body</strong></p>
+    <div class="product-card category-card">
+      <img src="https://via.placeholder.com/230x230" alt="Body">
+      <p>Body</p>
       <a href="body.html" class="btn">View</a>
     </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Skin">
-      <p><strong>Skin</strong></p>
+    <div class="product-card category-card">
+      <img src="https://via.placeholder.com/230x230" alt="Skin">
+      <p>Skin</p>
       <a href="skin.html" class="btn">View</a>
     </div>
-    <div class="product-card">
-      <img src="https://via.placeholder.com/220x220" alt="Sets">
-      <p><strong>Sets</strong></p>
+    <div class="product-card category-card">
+      <img src="https://via.placeholder.com/230x230" alt="Sets">
+      <p>Sets</p>
       <a href="sets.html" class="btn">View</a>
     </div>
   </div>
@@ -138,25 +168,25 @@
 
 <!-- Testimonials -->
 <section class="container">
-  <h2>Testimonials</h2>
+  <h2>What Our Customers Say</h2>
   <div class="testimonials">
     <div class="testimonial-card">
-      <p>"I love the hair products! My hair has never felt better."</p>
+      <p>"I love the hair products! My hair has never felt better." – Sarah</p>
     </div>
     <div class="testimonial-card">
-      <p>"The skincare line is amazing. Highly recommend!"</p>
+      <p>"The skincare line is amazing. Highly recommend!" – Alex</p>
     </div>
     <div class="testimonial-card">
-      <p>"Best body products I've used in years."</p>
+      <p>"Best body products I've used in years." – Jamie</p>
     </div>
   </div>
 </section>
 
-<!-- Newsletter Signup -->
-<section class="container" style="background:#f8f8f8;">
-  <h2>Newsletter Signup</h2>
-  <p style="text-align:center;">Subscribe to get the latest products and offers.</p>
-  <form class="newsletter" style="text-align:center; margin-top:20px;">
+<!-- Newsletter -->
+<section class="container" style="background:#fff8f0;">
+  <h2>Stay Updated</h2>
+  <p style="text-align:center; margin-bottom:20px;">Subscribe to our newsletter for the latest products and offers.</p>
+  <form class="newsletter" style="text-align:center;">
     <input type="email" placeholder="Your email">
     <button type="submit">Subscribe</button>
   </form>
