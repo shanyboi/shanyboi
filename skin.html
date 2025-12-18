@@ -4,10 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skin - Based Bodyworks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap" rel="stylesheet">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Roboto',sans-serif;background:#fff;color:#222;line-height:1.6;}
+    header{background:#fff;border-bottom:1px solid #ddd;padding:20px 0;position:sticky;top:0;z-index:1000;box-shadow:0 2px 5px rgba(0,0,0,0.05);}
+    nav{display:flex;justify-content:center;gap:30px;}
+    nav a{text-decoration:none;color:#222;font-weight:600;transition: color 0.3s, transform 0.2s;font-size:1.1rem;}
+    nav a:hover{color:#ff6600;transform:scale(1.05);}
+    .hero{background: linear-gradient(to right, #fff4e6, #fff8f0);padding:100px 20px;text-align:center;}
+    .hero h1{font-family:'Playfair Display', serif;font-size:3rem;margin-bottom:15px;color:#222;}
+    .hero p{font-size:1.2rem;color:#555;margin-bottom:25px;}
+    .container{padding:50px 20px;max-width:1200px;margin:0 auto;}
+    h2{text-align:center;margin-bottom:50px;font-size:2.5rem;font-family:'Playfair Display', serif;color:#222;}
+    .products{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
+    .product-card{border-radius:15px;overflow:hidden;width:230px;background:#fff;box-shadow:0 10px 20px rgba(0,0,0,0.08);text-align:center;transition:transform 0.3s,box-shadow 0.3s;}
+    .product-card img{width:100%;height:auto;display:block;}
+    .product-card p{padding:10px 0;color:#333;font-weight:600;}
+    .product-card:hover{transform:translateY(-8px);box-shadow:0 15px 25px rgba(0,0,0,0.15);}
+    .newsletter input[type="email"]{padding:12px;width:280px;border-radius:8px;border:1px solid #ddd;font-size:1rem;}
+    .newsletter button{padding:12px 25px;background:#ff6600;color:#fff;border:none;border-radius:8px;cursor:pointer;font-weight:bold;transition:background 0.3s,transform 0.2s;}
+    .newsletter button:hover{background:#ff9a3c;transform:scale(1.05);}
+    footer{background:#222;color:#fff;text-align:center;padding:35px 20px;margin-top:50px;}
+    footer a{color:#ff6600;text-decoration:none;font-weight:500;}
+  </style>
 </head>
 <body>
-  <h1>Skin Products</h1>
-  <p>This is the Skin category page.</p>
-  <a href="index.html">← Back to Home</a>
+
+<header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="hair.html">Hair</a>
+    <a href="body.html">Body</a>
+    <a href="skin.html">Skin</a>
+    <a href="sets.html">Sets</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Skin Care</h1>
+  <p>Premium skin products to nourish and protect your skin daily.</p>
+</section>
+
+<section class="container">
+  <h2>Featured Skin Products</h2>
+  <div class="products">
+    <div class="product-card"><img src="https://via.placeholder.com/230x230" alt="Face Oil"><p>Face Oil</p></div>
+    <div class="product-card"><img src="https://via.placeholder.com/230x230" alt="Cleanser"><p>Cleanser</p></div>
+    <div class="product-card"><img src="https://via.placeholder.com/230x230" alt="Moisturizer"><p>Moisturizer</p></div>
+    <div class="product-card"><img src="https://via.placeholder.com/230x230" alt="Serum"><p>Serum</p></div>
+  </div>
+</section>
+
+<section class="container" style="background:#fff8f0;">
+  <h2>Newsletter Signup</h2>
+  <p style="text-align:center;margin-bottom:20px;">Subscribe for skincare tips and new product launches.</p>
+  <form class="newsletter" style="text-align:center;">
+    <input type="email" placeholder="Your email">
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<footer>
+  &copy; 2025 Based Bodyworks | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+</footer>
+
 </body>
 </html>
