@@ -5,18 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Based Bodyworks - Static Clone</title>
   <style>
-    /* Reset and basics */
     * { margin:0; padding:0; box-sizing:border-box; font-family: Arial, sans-serif; }
     body { background:#fff; color:#222; line-height:1.6; }
 
     /* Header */
-    header { background:#fff; border-bottom:1px solid #ddd; padding:20px 0; }
+    header {
+      background:#fff;
+      border-bottom:1px solid #ddd;
+      padding:20px 0;
+      position: sticky;
+      top:0;
+      z-index: 1000;
+    }
     nav { display:flex; justify-content:center; gap:30px; }
     nav a { text-decoration:none; color:#222; font-weight:600; transition: color 0.3s; }
     nav a:hover { color:#ff6600; }
 
     /* Hero Section */
-    .hero { background:#f8f8f8; padding:80px 20px; text-align:center; }
+    .hero { background:#f8f8f8; padding:100px 20px; text-align:center; }
     .hero h1 { font-size:3rem; margin-bottom:10px; }
     .hero p { font-size:1.2rem; margin-bottom:20px; }
     .btn { display:inline-block; padding:12px 30px; background:#000; color:#fff; text-decoration:none; font-weight:bold; border-radius:5px; transition: background 0.3s; }
@@ -28,9 +34,18 @@
 
     /* Products */
     .products { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; }
-    .product-card { border:1px solid #ddd; width:220px; padding:15px; text-align:center; border-radius:5px; transition: transform 0.3s; }
+    .product-card { border:1px solid #ddd; width:220px; padding:15px; text-align:center; border-radius:5px; transition: transform 0.3s; background:#fff; }
     .product-card img { width:100%; height:auto; margin-bottom:15px; border-radius:5px; }
     .product-card:hover { transform: translateY(-5px); }
+
+    /* Testimonials */
+    .testimonials { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; }
+    .testimonial-card { border:1px solid #ddd; padding:20px; width:250px; border-radius:5px; background:#f8f8f8; }
+
+    /* Newsletter */
+    .newsletter input[type="email"] { padding:10px; width:250px; }
+    .newsletter button { padding:10px 20px; background:#000; color:#fff; border:none; border-radius:5px; margin-left:10px; cursor:pointer; }
+    .newsletter button:hover { background:#ff6600; }
 
     /* Footer */
     footer { background:#222; color:#fff; text-align:center; padding:30px 20px; margin-top:40px; }
@@ -39,54 +54,118 @@
 </head>
 <body>
 
-  <!-- Header -->
-  <header>
-    <nav>
-  <a href="hair.html">Hair</a>
-  <a href="body.html">Body</a>
-  <a href="skin.html">Skin</a>
-  <a href="sets.html">Sets</a>
-    </nav>
-  </header>
+<!-- Header -->
+<header>
+  <nav>
+    <a href="hair.html">Hair</a>
+    <a href="body.html">Body</a>
+    <a href="skin.html">Skin</a>
+    <a href="sets.html">Sets</a>
+  </nav>
+</header>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Based Bodyworks</h1>
-    <p>Natural, high-quality hair & body products for everyone</p>
-    <a href="#products" class="btn">Shop Now</a>
-  </section>
+<!-- Hero Section -->
+<section class="hero">
+  <h1>Based Bodyworks</h1>
+  <p>Natural, high-quality hair & body products for everyone</p>
+  <a href="#featured-products" class="btn">Shop Now</a>
+</section>
 
-  <!-- Featured Products -->
-  <section id="products" class="container">
-    <h2>Featured Products</h2>
-    <div class="products">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/220x220" alt="Texture Powder">
-        <p><strong>Texture Powder</strong></p>
-        <p>$20.00</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/220x220" alt="Sea Salt Spray">
-        <p><strong>Sea Salt Spray</strong></p>
-        <p>$20.00</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/220x220" alt="Shower Duo">
-        <p><strong>Shower Duo</strong></p>
-        <p>$56.00</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/220x220" alt="Hair Oil">
-        <p><strong>Hair Oil</strong></p>
-        <p>$30.00</p>
-      </div>
+<!-- Featured Products -->
+<section id="featured-products" class="container">
+  <h2>Featured Products</h2>
+  <div class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Texture Powder">
+      <p><strong>Texture Powder</strong></p>
+      <p>$20.00</p>
     </div>
-  </section>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Sea Salt Spray">
+      <p><strong>Sea Salt Spray</strong></p>
+      <p>$20.00</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Shower Duo">
+      <p><strong>Shower Duo</strong></p>
+      <p>$56.00</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Hair Oil">
+      <p><strong>Hair Oil</strong></p>
+      <p>$30.00</p>
+    </div>
+    <!-- Add more products to make page longer -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Product 5">
+      <p><strong>Product 5</strong></p>
+      <p>$25.00</p>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Product 6">
+      <p><strong>Product 6</strong></p>
+      <p>$30.00</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer>
-    &copy; 2025 Based Bodyworks | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
-  </footer>
+<!-- Category Highlights -->
+<section class="container" style="background:#f8f8f8;">
+  <h2>Shop By Category</h2>
+  <div class="products">
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Hair">
+      <p><strong>Hair</strong></p>
+      <a href="hair.html" class="btn">View</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Body">
+      <p><strong>Body</strong></p>
+      <a href="body.html" class="btn">View</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Skin">
+      <p><strong>Skin</strong></p>
+      <a href="skin.html" class="btn">View</a>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/220x220" alt="Sets">
+      <p><strong>Sets</strong></p>
+      <a href="sets.html" class="btn">View</a>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="container">
+  <h2>Testimonials</h2>
+  <div class="testimonials">
+    <div class="testimonial-card">
+      <p>"I love the hair products! My hair has never felt better."</p>
+    </div>
+    <div class="testimonial-card">
+      <p>"The skincare line is amazing. Highly recommend!"</p>
+    </div>
+    <div class="testimonial-card">
+      <p>"Best body products I've used in years."</p>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section class="container" style="background:#f8f8f8;">
+  <h2>Newsletter Signup</h2>
+  <p style="text-align:center;">Subscribe to get the latest products and offers.</p>
+  <form class="newsletter" style="text-align:center; margin-top:20px;">
+    <input type="email" placeholder="Your email">
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- Footer -->
+<footer>
+  &copy; 2025 Based Bodyworks | <a href="#">Privacy Policy</a> | <a href="#">Terms & Conditions</a>
+</footer>
 
 </body>
 </html>
